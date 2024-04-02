@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni-Anchor</title>
+    <link rel="stylesheet" href="home_page_style.css">
+</head>
+<body>
+    <div class="welcome-message">
+        <h1>Hello <span id="username-placeholder"></span>,</h1>
+        <p>Welcome, what would you like to do today?</p>
+    </div>
+    <div class="button-container">
+        <div class="button-row">
+            <a href="self_report.html"><button class="button">Self Report</button></a>
+            <a href="book_meeting.html"><button class="button">Book Meeting</button></a>
+            <a href="view_meetings.html"><button class="button">View Meetings</button></a>
+        </div>
+        <div class="button-row">
+            <a href="analysis.html"><button class="button">Analysis</button></a>
+            <a href="chat.html"><button class="button">Messages</button></a>
+            <a href="wellness_activities.html"><button class="button">Wellness Activities</button></a>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve the first name from local storage
+        var storedFirstName = localStorage.getItem('FirstName');
+        if (storedFirstName) {
+            document.getElementById('username-placeholder').textContent = storedFirstName;
+        }
+    </script>
+</body>
+</html>
+

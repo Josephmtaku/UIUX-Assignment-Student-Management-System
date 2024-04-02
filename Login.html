@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni-Anchor</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // XML data embedded in the HTML file
+        var xmlData = `<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user>
+        <username>joe1</username>
+        <FirstName>Joseph</FirstName>
+        <password>P123</password>
+    </user>
+    <user>
+        <username>Chloe2</username>
+        <FirstName>Chloe</FirstName>
+        <password>P122</password>
+    </user>
+</users>`;
+
+        // Function for processing login details
+        function processLoginDetails() {
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(xmlData, "text/xml");
+            var users = xmlDoc.getElementsByTagName('user');
+            var username = document.querySelector('input[type="text"]').value;
+            var password = document.querySelector('input[type="password"]').value;
+            var found = false;
+            var firstName = "";
+            // Check if login details are correct
+            for (var i = 0; i < users.length; i++) {
+                var user = users[i];
+                var xmlUsername = user.getElementsByTagName('username')[0].textContent;
+                var xmlFirstName = user.getElementsByTagName('FirstName')[0].textContent;
+                var xmlPassword = user.getElementsByTagName('password')[0].textContent;
+                if (username === xmlUsername && password === xmlPassword) {
+                    found = true;
+                    firstName = xmlFirstName; // Set the first name
+                    break;
+                }
+            }
+            // If login details are correct, redirect to homepage
+            if (found) {
+                // Store the first name in local storage
+                localStorage.setItem('FirstName', firstName);
+                window.location.href = "home_page.html";
+            } else {
+                alert("Invalid username or password");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Uni-Anchor Login</h2>
+        <form class="login-form" onsubmit="event.preventDefault(); processLoginDetails()">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <p class="forgot-password"><a href="forgot_password.html">Forgot Password?</a></p>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

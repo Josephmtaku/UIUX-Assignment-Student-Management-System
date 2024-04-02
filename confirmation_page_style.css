@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #007EF2, #7B1E3F);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full height of viewport */
+}
+
+h2 {
+    color: #ffffff;
+}
+
+p {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #007bff;
+}

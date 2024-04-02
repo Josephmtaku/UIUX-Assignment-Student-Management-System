@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Report Analysis</title>
+    <link rel="stylesheet" href="analysis_style.css">
+</head>
+<body>
+    <div class="analysis-container">
+        <h2>Self-Report Analysis</h2>
+        <div class="result">
+            <span class="result-title">Number of Reports:</span>
+            <span class="result-value" id="num-reports"></span>
+        </div>
+        <div class="result">
+            <span class="result-title">Average Stress Level:</span>
+            <span class="result-value" id="avg-stress"></span>
+        </div>
+        <div class="result">
+            <span class="result-title">Percentage with Anxiety:</span>
+            <span class="result-value" id="percent-anxiety"></span>
+        </div>
+        <div class="result">
+            <span class="result-title">Percentage with Depression:</span>
+            <span class="result-value" id="percent-depression"></span>
+        </div>
+    </div>
+
+    <script>
+        // Retrieves self-report data from local storage
+        var selfReports = JSON.parse(localStorage.getItem('selfReports')) || [];
+
+        // Displays number of reports
+        document.getElementById('num-reports').textContent = selfReports.length;
+
+        // Calculates average stress level
+        var totalStress = selfReports.reduce(function(acc, report) {
+            return acc + (report.stress === 'high' ? 2 : report.stress === 'very-high' ? 3 : 1);
+        }, 0);
+        var avgStress = totalStress / selfReports.length;
+        document.getElementById('avg-stress').textContent = avgStress.toFixed(2);
+
+        // Calculates percentage with anxiety
+        var numAnxietyReports = selfReports.filter(function(report) {
+            return report.anxiety === 'yes';
+        }).length;
+        var percentAnxiety = (numAnxietyReports / selfReports.length) * 100;
+        document.getElementById('percent-anxiety').textContent = percentAnxiety.toFixed(2) + '%';
+
+        // Calculates percentage with depression
+        var numDepressionReports = selfReports.filter(function(report) {
+            return report.depression === 'yes';
+        }).length;
+        var percentDepression = (numDepressionReports / selfReports.length) * 100;
+        document.getElementById('percent-depression').textContent = percentDepression.toFixed(2) + '%';
+    </script>
+</body>
+</html>

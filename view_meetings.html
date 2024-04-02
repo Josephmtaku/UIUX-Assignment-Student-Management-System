@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Meetings</title>
+    <link rel="stylesheet" href="view_meetings_style.css">
+</head>
+<body>
+    <h2>View Meetings</h2>
+    <div id="meetings-list">
+        <!-- Meetings will be displayed here -->
+    </div>
+    <script>
+        // Retrieves stored meetings from local storage
+        var meetings = JSON.parse(localStorage.getItem("meetings")) || [];
+
+        // Displays meetings
+        var meetingsList = document.getElementById("meetings-list");
+        meetings.forEach(function(meeting) {
+            var meetingDiv = document.createElement("div");
+            meetingDiv.classList.add("meeting-item");
+
+            var dateP = document.createElement("p");
+            dateP.textContent = "Date: " + meeting.date;
+            meetingDiv.appendChild(dateP);
+
+            var timeP = document.createElement("p");
+            timeP.textContent = "Time: " + meeting.time;
+            meetingDiv.appendChild(timeP);
+
+            var purposeP = document.createElement("p");
+            purposeP.textContent = "Purpose: " + meeting.purpose;
+            meetingDiv.appendChild(purposeP);
+
+            meetingsList.appendChild(meetingDiv);
+        });
+    </script>
+</body>
+</html>

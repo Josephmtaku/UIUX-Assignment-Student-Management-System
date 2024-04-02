@@ -1,0 +1,68 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    background: linear-gradient(to right, #BE02C2, #FF4D00);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+}
+
+.login-form input,
+.login-form button {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.login-form input {
+    border: 1px solid #ddd;
+}
+
+.login-form button {
+    background: linear-gradient(to right, #F21A5B, #7C3349);
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    padding: 6px; 
+    width: 50%;
+}
+
+.login-form button:hover {
+    background: linear-gradient(to right, #D41950, #6B2D3D);
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 10px; 
+}
+
+.forgot-password a {
+    font-size: 0.8em;
+    color: #09589c; 
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
