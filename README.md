@@ -1,1 +1,1 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/JeHAekJp)
+This is a student management system to support both students and staff monitor engagement. The website enables students to self-report on wellbeing, book meetings with personal supervisors, engage in wellbeing games and activities as well as chat features. 
