@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="wellness_activities_style.css">
 </head>
 <body>
+    <button id="go-back-btn" class="go-back">Go Back</button>
     <div class="wellness-message">
         <p>Please choose an activity</p>
     </div>
@@ -16,4 +17,9 @@
         </div>
     </div>
 </body>
+<script>
+    document.getElementById('go-back-btn').addEventListener('click', function() {
+        window.history.back();
+    });
+</script>
 </html>

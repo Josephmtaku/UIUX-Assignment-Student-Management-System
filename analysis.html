@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="analysis_style.css">
 </head>
 <body>
+    <button id="go-back-btn" class="go-back">Go Back</button>
     <div class="analysis-container">
         <h2>Self-Report Analysis</h2>
         <div class="result">
@@ -30,8 +31,7 @@
     <script>
         // Retrieves self-report data from local storage
         var selfReports = JSON.parse(localStorage.getItem('selfReports')) || [];
-
-        // Displays number of reports
+        
         document.getElementById('num-reports').textContent = selfReports.length;
 
         // Calculates average stress level
@@ -54,6 +54,11 @@
         }).length;
         var percentDepression = (numDepressionReports / selfReports.length) * 100;
         document.getElementById('percent-depression').textContent = percentDepression.toFixed(2) + '%';
+    </script>
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.history.back();
+        });
     </script>
 </body>
 </html>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="gamestyle.css">
 </head>
 <body>
+    <button id="go-back-btn" class="go-back">Go Back</button>
     <h1>Guess the Number</h1>
     <p>Guess a number between 1 and 100:</p>
     <input type="number" id="guess" min="1" max="100">
@@ -19,12 +20,8 @@
         let guesses = 0;
 
         function checkGuess() {
-            // Get the user's guess
             const userGuess = parseInt(document.getElementById('guess').value);
-            // Increment the number of guesses
             guesses++;
-
-            // Check if the guess is correct
             if (userGuess === randomNumber) {
                 document.getElementById('message').innerHTML = `Congratulations! You guessed the number ${randomNumber} in ${guesses} guesses.`;
             } else if (userGuess < randomNumber) {
@@ -33,6 +30,11 @@
                 document.getElementById('message').innerHTML = 'Too high! Try again.';
             }
         }
+    </script>
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.history.back();
+        });
     </script>
 </body>
 </html>

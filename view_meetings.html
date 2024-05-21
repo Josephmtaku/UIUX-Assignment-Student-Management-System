@@ -7,15 +7,13 @@
     <link rel="stylesheet" href="view_meetings_style.css">
 </head>
 <body>
+    <button id="go-back-btn" class="go-back">Go Back</button>
     <h2>View Meetings</h2>
     <div id="meetings-list">
-        <!-- Meetings will be displayed here -->
+        
     </div>
     <script>
-        // Retrieves stored meetings from local storage
         var meetings = JSON.parse(localStorage.getItem("meetings")) || [];
-
-        // Displays meetings
         var meetingsList = document.getElementById("meetings-list");
         meetings.forEach(function(meeting) {
             var meetingDiv = document.createElement("div");
@@ -34,6 +32,11 @@
             meetingDiv.appendChild(purposeP);
 
             meetingsList.appendChild(meetingDiv);
+        });
+    </script>
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.history.back();
         });
     </script>
 </body>

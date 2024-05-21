@@ -6,7 +6,6 @@
     <title>Uni-Anchor</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        // XML data embedded in the HTML file
         var xmlData = `<?xml version="1.0" encoding="UTF-8"?>
 <users>
     <user>
@@ -30,7 +29,7 @@
             var password = document.querySelector('input[type="password"]').value;
             var found = false;
             var firstName = "";
-            // Check if login details are correct
+
             for (var i = 0; i < users.length; i++) {
                 var user = users[i];
                 var xmlUsername = user.getElementsByTagName('username')[0].textContent;
@@ -38,13 +37,11 @@
                 var xmlPassword = user.getElementsByTagName('password')[0].textContent;
                 if (username === xmlUsername && password === xmlPassword) {
                     found = true;
-                    firstName = xmlFirstName; // Set the first name
+                    firstName = xmlFirstName;
                     break;
                 }
             }
-            // If login details are correct, redirect to homepage
             if (found) {
-                // Store the first name in local storage
                 localStorage.setItem('FirstName', firstName);
                 window.location.href = "home_page.html";
             } else {
@@ -55,7 +52,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Uni-Anchor Login</h2>
+        <h2>Uni-Anchor</h2>
         <form class="login-form" onsubmit="event.preventDefault(); processLoginDetails()">
             <input type="text" placeholder="Username" required>
             <input type="password" placeholder="Password" required>

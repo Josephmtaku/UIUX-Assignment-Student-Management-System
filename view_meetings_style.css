@@ -1,33 +1,74 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #007EF2, #7B1E3F);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f7f7;
     margin: 0;
     padding: 20px;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 700px;
     margin: 50px auto;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
 }
 
 h2 {
-    color: #ffffff;
-    margin-bottom: 20px;
+    color: #007bff;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .meeting-item {
-    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
 }
 
-p {
-    color: #ffffff;
+.meeting-item:hover {
+    transform: translateY(-5px);
+}
+
+.meeting-item p {
+    color: #333;
     margin-bottom: 10px;
 }
 
-p:last-child {
+.meeting-item p:last-child {
     margin-bottom: 0;
+}
+
+.meeting-item p strong {
+    font-weight: bold;
+}
+
+.meeting-item p em {
+    font-style: italic;
+}
+
+.meeting-item p small {
+    font-size: 0.8em;
+    color: #777;
+}
+#go-back-btn.go-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#go-back-btn.go-back:hover {
+    background-color: #007bff;
+    color: #fff; 
 }

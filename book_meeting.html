@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="book_meeting_style.css">
 </head>
 <body>
+    <button id="go-back-btn" class="go-back">Go Back</button>
     <div class="meeting-container">
         <h2>Book a Meeting</h2>
         <form id="meeting-form" onsubmit="saveMeeting(event)">
@@ -25,37 +26,32 @@
 
     <script>
         function saveMeeting(event) {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault();
 
             var date = document.getElementById('date').value;
             var time = document.getElementById('time').value;
             var purpose = document.getElementById('purpose').value;
 
-            // Create an object to store meeting details
             var meeting = {
                 date: date,
                 time: time,
                 purpose: purpose
             };
-
-            // Check if local storage is supported
             if (typeof(Storage) !== "undefined") {
-                // Retrieve existing meetings or initialize an empty array
                 var meetings = JSON.parse(localStorage.getItem("meetings")) || [];
-
-                // Add the new meeting to the array
                 meetings.push(meeting);
-
-                // Save the updated array back to local storage
                 localStorage.setItem("meetings", JSON.stringify(meetings));
 
-                // Redirect to confirmation page
                 window.location.href = "confirmation_page.html";
             } else {
-                // If local storage is not supported, display an error message
                 alert("Sorry, your browser does not support local storage. Please try again with a different browser.");
             }
         }
+    </script>
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.history.back();
+        });
     </script>
 </body>
 </html>

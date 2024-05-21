@@ -1,29 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
     background: linear-gradient(to right, #007EF2, #7B1E3F);
     color: #fff;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.welcome-message {
+    padding: 30px 0;
     text-align: center;
-    margin-bottom: 30px;
 }
 
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+header h1 {
+    font-size: 36px;
 }
 
-.button-row {
+header p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+main {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -31,10 +46,11 @@ body {
     background: linear-gradient(to right, #1CBBFF, #BE02C2);
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     margin: 10px;
-    border-radius: 20px;
-    cursor: pointer;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
     transition: background 0.3s ease;
 }
 
@@ -42,12 +58,104 @@ body {
     background: linear-gradient(to right, #17A1E6, #A0189B);
 }
 
-.scroll-container {
-    display: flex;
-    overflow-x: auto;
-    margin-bottom: 30px;
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 255px; 
+}
+.icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    margin-right: 10px;
 }
 
-.scroll-container::-webkit-scrollbar {
-    display: none;
+.self-report {
+    background-image: url('self_report_icon.png');
+}
+
+.book-meeting {
+    background-image: url('book_meeting_icon.png');
+}
+
+.view-meetings {
+    background-image: url('view_meetings_icon.png');
+}
+
+.analysis {
+    background-image: url('analysis_icon.png');
+}
+
+.chat {
+    background-image: url('chat_icon.png');
+}
+
+.wellness {
+    background-image: url('wellness_icon.png');
+}
+.container {
+    padding: 20px;
+}
+
+header {
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.button {
+    width: calc(50% - 20px);
+    margin: 10px;
+}
+
+.icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.self-report,
+.book-meeting,
+.view-meetings,
+.analysis,
+.chat,
+.wellness {
+    background-size: contain;
+    background-position: center;
+}
+.logout-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #ff2600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #cc4c3e;
 }

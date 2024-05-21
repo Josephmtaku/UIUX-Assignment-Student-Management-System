@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="self_reporting_style.css">
 </head>
 <body>
+    <button id="go-back-btn" class="go-back">Go Back</button>
     <div class="self-report-container">
+        
         <h2>Student Self Reporting</h2>
         <form id="self-report-form">
             <label for="stress">How stressed do you feel?</label><br>
@@ -41,12 +43,10 @@
         document.getElementById('self-report-form').addEventListener('submit', function(event) {
             event.preventDefault();
             
-            // Gets the selected stress, anxiety, and depression levels
             var stress = document.getElementById('stress').value;
             var anxiety = document.getElementById('anxiety').value;
             var depression = document.getElementById('depression').value;
 
-            // Checks if stress, anxiety, or depression level is high
             if (stress === 'high' || stress === 'very-high' || anxiety === 'yes' || depression === 'yes') {
                 document.getElementById('meeting-suggestion').style.display = 'block';
                 document.getElementById('book-meeting-btn').style.display = 'block';
@@ -55,8 +55,6 @@
                 document.getElementById('book-meeting-btn').style.display = 'none';
                 document.getElementById('submitted').style.display = 'block';
             }
-
-            // Stores the responses in local storage
             var selfReportData = {
                 stress: stress,
                 anxiety: anxiety,
@@ -67,9 +65,13 @@
             localStorage.setItem('selfReports', JSON.stringify(selfReports));
         });
 
-        // Function to handle clicking the "Book a Meeting" button
         document.getElementById('book-meeting-btn').addEventListener('click', function() {
             window.location.href = 'book_meeting.html';
+        });
+    </script>
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.history.back();
         });
     </script>
 </body>

@@ -7,10 +7,16 @@
     <link rel="stylesheet" href="confirmation_page_style.css">
 </head>
 <body>
+    <button id="go-back-btn" class="go-back">Go Home</button>
     <div class="container">
         <h2>Meeting Booked Successfully</h2>
         <p>Your meeting has been successfully booked.</p>
         <p>Click <a href="view_meetings.html">here</a> to view all booked meetings.</p>
     </div>
+    <script>
+        document.getElementById('go-back-btn').addEventListener('click', function() {
+            window.location.href = 'home_page.html';
+        });
+    </script>
 </body>
 </html>
